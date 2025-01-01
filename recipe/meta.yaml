@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/biolmai-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/biolmai-{{ version }}.tar.gz
   sha256: 34dd97fe2b5b128f667dd54ca0e34016f39578e311bc63eed85c0207300286fb
 
 build:
@@ -14,14 +14,14 @@ build:
     - biolmai=biolmai.cli:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - click >=6.0
     - requests
     - pandas
@@ -36,6 +36,7 @@ test:
     - biolmai --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/BioLM/py-biolm
