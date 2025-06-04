@@ -1,5 +1,6 @@
 {% set name = "biolmai" %}
 {% set version = "0.1.9" %}
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
