@@ -1,13 +1,12 @@
 {% set name = "biolmai" %}
-{% set version = "0.1.8" %}
-
+{% set version = "0.1.9" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/biolmai-{{ version }}.tar.gz
-  sha256: b13317cbafa9f29628f3bf92c46279d90ea96f4061482dc4f4bb6f32c60f1f03
+  sha256: 5ea65acdb629ff0841a1210fbe137ba99812229cd950afd86e62a59385b89a3f
 
 build:
   entry_points:
