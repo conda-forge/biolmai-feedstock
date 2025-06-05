@@ -26,7 +26,6 @@ requirements:
     - click >=6.0
     - requests
     - pandas
-    - aiohttp
     - aiodns
     - httpx >=0.23.0
     - httpcore
