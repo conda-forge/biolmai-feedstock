@@ -22,7 +22,7 @@ requirements:
     - setuptools
     - wheel
   run:
-    - python >={{ python_min }}
+    - python
     - click >=6.0
     - requests
     - pandas
