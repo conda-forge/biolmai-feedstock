@@ -12,21 +12,28 @@ source:
 build:
   entry_points:
     - biolmai=biolmai.cli:cli
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
+    - setuptools
+    - wheel
   run:
-    - python >={{ python_min }}
+    - python
     - click >=6.0
     - requests
     - pandas
-    - aiohttp
     - aiodns
+    - httpx >=0.23.0
+    - httpcore
+    - synchronicity >=0.5.0
+    - async-lru
+    - aiofiles
+    - aiohttp <=3.8.6  # [python_version<3.12]
+    - aiohttp >=3.9.0  # [python_version>=3.12]
 
 test:
   imports:
