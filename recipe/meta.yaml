@@ -14,14 +14,14 @@ build:
     - biolmai=biolmai.cli:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - click >=6.0
     - requests
     - pandas
@@ -36,6 +36,7 @@ test:
     - biolmai --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/BioLM/py-biolm
