@@ -27,6 +27,13 @@ requirements:
     - pandas
     - aiohttp
     - aiodns
+    - httpx >=0.23.0
+    - httpcore
+    - synchronicity >=0.5.0
+    - async-lru
+    - aiofiles
+    - aiohttp <=3.8.6  # [py<312]
+    - aiohttp >=3.9.0  # [py>=312]
 
 test:
   imports:
