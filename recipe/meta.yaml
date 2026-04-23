@@ -1,5 +1,5 @@
 {% set name = "biolmai" %}
-{% set version = "0.2.3" %}
+{% set version = "0.2.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/biolmai-{{ version }}.tar.gz
-  sha256: c6ecb73871cffb64336bc47f140a1f3c114f43ce7a1dc702a41025aaf001da64
+  sha256: 48226a948e807bd040388f83ad694e9624c73439ff6c93a68c285fbf500bd411
 
 build:
   entry_points:
     - biolmai=biolmai.cli:cli
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 0
 
 requirements:
   host:
